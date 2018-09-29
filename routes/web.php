@@ -73,3 +73,7 @@ Route::get('/izin/{id}/yes', 'PresensiController@updateIzinY');
 
 Route::get('/izin/{id}/no', 'PresensiController@updateIzinN');
 
+Route::get('/izin/kelas_{kelas}/pertemuan_{pertemuan}/token_{token}', 'PresensiController@izin');
+
+Route::get('/pesan', 'PresensiController@pesan');
+

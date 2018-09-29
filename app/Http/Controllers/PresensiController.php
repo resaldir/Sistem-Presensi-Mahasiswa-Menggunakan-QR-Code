@@ -107,28 +107,19 @@ class PresensiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function export($id)
+    public function izin($kelas, $pertemuan, $token)
     {
+        return view('izin-form',['kelas'=>$kelas,'pertemuan'=>$pertemuan,'token'=>$token]);
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function pesan($pesan)
     {
+        return view('pesan',['pesan'=>$pesan]);
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         if (auth()->user()->user_level == '1'){

@@ -22,6 +22,7 @@ class IzinFalse1 extends JsonResource
     public function with($request)
     {
         return [
+            'error'=>true,
             'pesan'=>'Gagal dalam mengupdate status'
         ];
     }

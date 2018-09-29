@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Jadwal extends JsonResource
+class lihatPresensiBerhasil extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +14,13 @@ class Jadwal extends JsonResource
      */
     public function toArray($request)
     {
+        $totalPresensi = $this->count();
+        $totalHadir = $this->where('presensiStatus', 1)->count();
         return [
-            'hari'=> $this->haris->hariNama,
-            'mulai'=> $this->jdwlSesiMulai,
-            'selesai'=> $this->jdwlSesiSelesai,
-            'ruangan'=> $this->ruangans->ruanganKode,
+            'error'=>false,
+            'pesan'=>'Fetching Berhasil',
+            'total'=> $totalPresensi,
+            'hadir'=>$totalHadir
         ];
     }
 }

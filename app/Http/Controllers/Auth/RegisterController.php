@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'nip' => $data['nip'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'user_level'=>'3'
+            'user_level'=>'2'
         ]);
     }
 }
